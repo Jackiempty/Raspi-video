@@ -3,7 +3,7 @@ cap = cv2.VideoCapture(0)                         # 讀取電腦攝影機鏡頭�
 width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))    # 取得影像寬度
 height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))  # 取得影像高度
 fourcc = cv2.VideoWriter_fourcc(*'mp4v')          # 設定影片的格式為 mp4v
-out = cv2.VideoWriter('output.mp4', fourcc, 20.0, (width,  height))  # 產生空的影片
+out = cv2.VideoWriter('output.mp4', fourcc, 30.0, (width,  height))  # 產生空的影片
 if not cap.isOpened():
     print("Cannot open camera")
     exit()
