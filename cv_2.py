@@ -7,6 +7,7 @@ def empty(v):
 
 cv2.namedWindow('TrackBar')
 cv2.resizeWindow('TrackBar', 640, 320)
+cap = cv2.VideoCapture(0)
 
 cv2.createTrackbar('Hue Min', 'TrackBar', 0, 179, empty)
 cv2.createTrackbar('Hue Max', 'TrackBar', 179, 179, empty)
@@ -20,6 +21,13 @@ img = cv2.resize(img, (0, 0), fx = 0.4, fy = 0.4)
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
 while True:
+    
+    # ret, img = cap.read()
+    # if not ret:
+    #     break
+
+    # hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+
     h_min = cv2.getTrackbarPos('Hue Min', 'TrackBar')
     h_max = cv2.getTrackbarPos('Hue Max', 'TrackBar')
     s_min = cv2.getTrackbarPos('Sat Min', 'TrackBar')
@@ -33,7 +41,7 @@ while True:
 
     mask = cv2.inRange(hsv, lower, upper)
 
-    cv2.imshow('img', img)
+    cv2.imshow('frame', img)
     cv2.imshow('hsv', hsv)
     cv2.imshow('mask', mask)
 

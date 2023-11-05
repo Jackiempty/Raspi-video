@@ -16,11 +16,24 @@ while cap.isOpened():
         break
 
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    h_min = 16
+    h_max = 35
+    s_min = 79
+    s_max = 255
+    v_min = 101
+    v_max = 255
+    lower = np.array([h_min, s_min, v_min])
+    upper = np.array([h_max, s_max, v_max])
+
+    mask = cv2.inRange(hsv, lower, upper)
+    result = cv2.bitwise_and(frame, frame, mask = mask)
     # lane_image = np.copy(frame)
     
 
     # Display the processed frame
     cv2.imshow('Video', frame)
+    cv2.imshow('mask', mask)
+    cv2.imshow('yellow', result)
     
 
     # Introduce a delay to play the video at normal speed
