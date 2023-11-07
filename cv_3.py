@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # Open the video file
 
-# cap = cv2.VideoCapture(r"/Users/jackiecdp/Desktop/video_confirm/footage_1.mp4")
+# cap = cv2.VideoCapture(r"/home/candy/Desktop/first_selfie.jpg")
 cap = cv2.VideoCapture(0)
 
 
