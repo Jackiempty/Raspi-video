@@ -7,7 +7,7 @@ def empty(v):
 
 cv2.namedWindow('TrackBar')
 cv2.resizeWindow('TrackBar', 640, 320)
-cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(0)
 
 cv2.createTrackbar('Hue Min', 'TrackBar', 0, 179, empty)
 cv2.createTrackbar('Hue Max', 'TrackBar', 179, 179, empty)
@@ -16,7 +16,7 @@ cv2.createTrackbar('Sat Max', 'TrackBar', 255, 255, empty)
 cv2.createTrackbar('Val Min', 'TrackBar', 0, 255, empty)
 cv2.createTrackbar('Val Max', 'TrackBar', 255, 255, empty)
 
-img = cv2.imread('image_1.png')
+img = cv2.imread('test.jpg')
 img = cv2.resize(img, (0, 0), fx = 0.4, fy = 0.4)
 hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
